@@ -160,4 +160,3 @@ SDL, SDL_ttf, OpenAL, OpenGL/GLX, GLEW, Vulkan, zlib, minizip, mpg123,
 FreeType, HarfBuzz, libpng, and their dependencies. Those libraries are not
 included in the WhittyArcade release archive and remain under their own
 licences as installed by the user's Linux distribution.
-
