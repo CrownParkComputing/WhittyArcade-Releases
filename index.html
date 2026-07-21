@@ -24,10 +24,11 @@
       <a href="#install">Install</a>
       <a href="#roms">ROM setup</a>
       <a href="#controls">Controls</a>
+      <a href="#extension">Adding games</a>
       <a href="#screens">Screens</a>
       <a href="#support">Help</a>
     </nav>
-    <a class="header-download" href="https://github.com/CrownParkComputing/WhittyArcade-Releases/releases/tag/v0.1.0-preview.1">Download</a>
+    <a class="header-download" href="https://github.com/CrownParkComputing/WhittyArcade-Releases/releases/tag/v0.1.0-preview.2">Download</a>
   </header>
 
   <main id="main">
@@ -41,15 +42,15 @@
           Import your own compatible archives, map your controls and go.
         </p>
         <div class="hero-actions">
-          <a class="button primary" href="https://github.com/CrownParkComputing/WhittyArcade-Releases/releases/tag/v0.1.0-preview.1">
-            Download Preview 1 for Linux
+          <a class="button primary" href="https://github.com/CrownParkComputing/WhittyArcade-Releases/releases/tag/v0.1.0-preview.2">
+            Download Preview 2 for Linux
           </a>
           <a class="button secondary" href="#install">Read the install guide</a>
         </div>
         <ul class="release-facts" aria-label="Release facts">
           <li><strong>CachyOS / Arch</strong><span>x86-64 native build</span></li>
-          <li><strong>Tested release</strong><span>Checks run before packaging</span></li>
-          <li><strong>Private engine</strong><span>Public binaries and documentation</span></li>
+          <li><strong>46-test release</strong><span>Checks run before packaging</span></li>
+          <li><strong id="download-count" aria-live="polite">Loading…</strong><span>Linux archive downloads</span></li>
         </ul>
       </div>
 
@@ -58,7 +59,7 @@
         <p class="panel-label">CURRENT BUILD</p>
         <div class="board-readout">
           <span>VIDEO</span><strong>OpenGL · Vulkan · Software</strong>
-          <span>INPUT</span><strong>SDL controllers · Keyboard</strong>
+          <span>INPUT</span><strong>Mouse light guns · SDL · Keyboard</strong>
           <span>LIBRARY</span><strong>Merged · Split · Non-merged</strong>
           <span>SAVES</span><strong>EEPROM · NVRAM · High scores</strong>
         </div>
@@ -81,9 +82,9 @@
       <div class="board-grid">
         <article class="board-card featured">
           <div class="card-index">22</div>
-          <h3>Namco System 22</h3>
-          <p>Ridge Racer, Ridge Racer 2, Rave Racer, Ace Driver, Victory Lap and Cyber Commando.</p>
-          <span class="status">6 supported sets</span>
+          <h3>Namco System 22 / Super</h3>
+          <p>Ridge Racer, Ridge Racer 2, Rave Racer, Ace Driver, Victory Lap, Cyber Commando and Time Crisis.</p>
+          <span class="status">7 supported sets</span>
         </article>
         <article class="board-card">
           <div class="card-index">M1</div>
@@ -118,8 +119,8 @@
           <div class="step-number">01</div>
           <div>
             <h3>Download the release archive</h3>
-            <p>Open the Preview 1 GitHub release and download the CachyOS x86-64 <code>.tar.gz</code> file plus its checksum.</p>
-            <a class="text-link" href="https://github.com/CrownParkComputing/WhittyArcade-Releases/releases/tag/v0.1.0-preview.1">Open Preview 1 release →</a>
+            <p>Open the Preview 2 GitHub release and download the CachyOS x86-64 <code>.tar.gz</code> file plus its checksum.</p>
+            <a class="text-link" href="https://github.com/CrownParkComputing/WhittyArcade-Releases/releases/tag/v0.1.0-preview.2">Open Preview 2 release →</a>
           </div>
         </li>
         <li>
@@ -176,6 +177,7 @@ chmod +x WhittyArcade
           <thead><tr><th>Board</th><th>Supported short names</th><th>Companions</th></tr></thead>
           <tbody>
             <tr><td>Namco System 22</td><td><code>ridgerac</code>, <code>ridgera2</code>, <code>raverace</code>, <code>acedrive</code>, <code>victlap</code>, <code>cybrcomm</code></td><td><code>namcoc71.zip</code> and <code>namcoc74.zip</code></td></tr>
+            <tr><td>Namco Super System 22</td><td><code>timecris</code> (World, TS2 Ver.B)</td><td><code>namcoc71.zip</code>; no C74 archive needed</td></tr>
             <tr><td>Sega Model 1</td><td><code>vformula</code>, <code>vf</code>, <code>swa</code>, <code>wingwar</code></td><td>Split <code>vformula</code> also needs <code>vr.zip</code></td></tr>
             <tr><td>Sega Model 2</td><td><code>srallyc</code></td><td>None; <code>segabill.zip</code> is optional</td></tr>
             <tr><td>Phoenix</td><td><code>phoenix</code></td><td>None</td></tr>
@@ -233,6 +235,42 @@ chmod +x WhittyArcade
         <strong>Ridge Racer cabinet note</strong>
         <p>The standard Ridge Racer cabinet has no separate start switch. Insert a coin, then press the accelerator to start or select.</p>
       </div>
+
+      <div class="tip">
+        <strong>Time Crisis mouse gun</strong>
+        <p>Move the mouse to aim and left-click to fire. The player begins hidden. Hold <code>Space</code> to stand and attack; release it or right-click to take cover and reload. Gameplay replaces the desktop arrow with a thick cyan P1 target sight; two-player gun profiles use a separate red/magenta P2 sight.</p>
+      </div>
+    </section>
+
+    <section class="section" id="extension">
+      <div class="section-heading">
+        <p class="eyebrow">Extensible cabinets</p>
+        <h2>One game profile feeds the whole launcher</h2>
+        <p>WhittyArcade keeps game metadata, board behaviour and host controls separate, so a supported set appears consistently everywhere.</p>
+      </div>
+
+      <div class="instruction-grid">
+        <article>
+          <span class="instruction-icon" aria-hidden="true">1</span>
+          <h3>Describe the set</h3>
+          <p>A validated ROM profile supplies the short name, regions, interleave and companion archives.</p>
+        </article>
+        <article>
+          <span class="instruction-icon" aria-hidden="true">2</span>
+          <h3>Select cabinet behaviour</h3>
+          <p>The board module owns real hardware differences; the launcher, audit and save tools stay board-neutral.</p>
+        </article>
+        <article>
+          <span class="instruction-icon" aria-hidden="true">3</span>
+          <h3>Map and verify</h3>
+          <p>Game-specific actions use the common controller layer, then loader, bus and live boot checks prove the integration.</p>
+        </article>
+      </div>
+
+      <details open>
+        <summary>Preview 2 example: Time Crisis</summary>
+        <p>One catalog entry made the game visible to the ROM browser, audit and per-game controller pages. Its newly required Super System 22 memory map, M37710, sprite mixer and light-gun registers remain inside the Namco board implementation. Mouse aim becomes the same neutral gun axes used by configurable controller profiles.</p>
+      </details>
     </section>
 
     <section class="section" id="screens">
@@ -289,6 +327,10 @@ chmod +x WhittyArcade
           <p>Connect it, open <strong>Controllers / Keyboard</strong>, then choose <strong>Refresh plugged-in devices</strong>. The controller must be recognised by SDL as a game controller.</p>
         </details>
         <details>
+          <summary>Is Time Crisis pixel-perfect?</summary>
+          <p>No. Preview 2 validates boot, attract/gameplay scenes, audio, gun coordinates, trigger and pedal behaviour, but some Super System 22 fog and sprite alpha/blend details remain experimental.</p>
+        </details>
+        <details>
           <summary>Where are settings and saves?</summary>
           <p>Settings, input maps, EEPROM/NVRAM and high scores are stored below <code>~/.config/WhittyArcade</code>. The NVRAM Manager can back up, export, restore or factory-reset persistent data.</p>
         </details>
@@ -317,5 +359,27 @@ chmod +x WhittyArcade
     <p>Copyright © 2026 Jonathan Whittingham / CrownParkComputing. All rights reserved.</p>
     <p class="fine-print">Ridge Racer, Namco, Sega and all other third-party names and marks belong to their respective owners. WhittyArcade is not affiliated with or endorsed by them.</p>
   </footer>
+  <script>
+    (() => {
+      const output = document.getElementById('download-count');
+      const releases = 'https://api.github.com/repos/CrownParkComputing/WhittyArcade-Releases/releases?per_page=100';
+      fetch(releases, { headers: { Accept: 'application/vnd.github+json' } })
+        .then(response => {
+          if (!response.ok) throw new Error(`GitHub returned ${response.status}`);
+          return response.json();
+        })
+        .then(items => {
+          const count = items
+            .flatMap(release => release.assets || [])
+            .filter(asset => /^WhittyArcade-.*\.tar\.gz$/.test(asset.name))
+            .reduce((total, asset) => total + asset.download_count, 0);
+          output.textContent = count.toLocaleString('en-GB');
+          output.title = 'Anonymous release-asset count reported by GitHub';
+        })
+        .catch(() => {
+          output.textContent = 'GitHub-counted';
+        });
+    })();
+  </script>
 </body>
 </html>
