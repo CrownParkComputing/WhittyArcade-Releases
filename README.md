@@ -12,7 +12,7 @@ source.
 
 ## Download
 
-Use the [latest release](https://github.com/CrownParkComputing/WhittyArcade-Releases/releases/latest).
+Use the [Preview 1 release](https://github.com/CrownParkComputing/WhittyArcade-Releases/releases/tag/v0.1.0-preview.1).
 Current builds target CachyOS / Arch Linux x86-64.
 
 Every release contains:
@@ -41,4 +41,3 @@ ready. Do not upload or link to ROM files.
 Copyright © 2026 Jonathan Whittingham / CrownParkComputing. All rights
 reserved. See [LICENSE](LICENSE) and
 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
-
