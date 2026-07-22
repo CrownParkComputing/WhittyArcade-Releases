@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#071019">
-  <meta name="description" content="Official Linux downloads and user guide for WhittyArcade, a standalone multi-board arcade emulator.">
-  <meta property="og:title" content="WhittyArcade for Linux">
-  <meta property="og:description" content="Official binaries, ROM setup, controller mapping and launcher documentation.">
+  <meta name="description" content="Official Windows and Linux downloads and user guide for WhittyArcade, a standalone multi-board arcade emulator.">
+  <meta property="og:title" content="WhittyArcade for Windows and Linux">
+  <meta property="og:description" content="Official desktop binaries, ROM setup, controller mapping and launcher documentation.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/screenshots/main-menu.png">
-  <title>WhittyArcade — Linux releases and guide</title>
+  <title>WhittyArcade — Windows and Linux releases</title>
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -28,29 +28,29 @@
       <a href="#screens">Screens</a>
       <a href="#support">Help</a>
     </nav>
-    <a class="header-download" href="https://github.com/CrownParkComputing/WhittyArcade-Releases/releases/tag/v0.1.0-preview.2">Download</a>
+    <a class="header-download" href="https://github.com/CrownParkComputing/WhittyArcade-Releases/releases/tag/v0.2.0-preview.2">Download</a>
   </header>
 
   <main id="main">
     <section class="hero" id="top">
       <div class="hero-copy">
-        <p class="eyebrow">Standalone arcade emulation · Linux x86-64</p>
+        <p class="eyebrow">Standalone arcade emulation · Windows and Linux x86-64</p>
         <h1>The arcade boards.<br><span>One focused launcher.</span></h1>
         <p class="hero-intro">
           WhittyArcade brings Namco System 22, Sega Model 1, Sega Model 2 and
-          selected classic 2D hardware into one purpose-built Linux frontend.
+          selected classic 2D hardware into one purpose-built desktop frontend.
           Import your own compatible archives, map your controls and go.
         </p>
         <div class="hero-actions">
-          <a class="button primary" href="https://github.com/CrownParkComputing/WhittyArcade-Releases/releases/tag/v0.1.0-preview.2">
-            Download Preview 2 for Linux
+          <a class="button primary" href="https://github.com/CrownParkComputing/WhittyArcade-Releases/releases/tag/v0.2.0-preview.2">
+            Download Preview 2 for Windows &amp; Linux
           </a>
           <a class="button secondary" href="#install">Read the install guide</a>
         </div>
         <ul class="release-facts" aria-label="Release facts">
-          <li><strong>CachyOS / Arch</strong><span>x86-64 native build</span></li>
-          <li><strong>46-test release</strong><span>Checks run before packaging</span></li>
-          <li><strong id="download-count" aria-live="polite">Loading…</strong><span>Linux archive downloads</span></li>
+          <li><strong>Windows 10 / 11</strong><span>Portable x86-64 ZIP</span></li>
+          <li><strong>Five Linux targets</strong><span>Native distro packages</span></li>
+          <li><strong id="download-count" aria-live="polite">Loading…</strong><span>Desktop package downloads</span></li>
         </ul>
       </div>
 
@@ -60,6 +60,7 @@
         <div class="board-readout">
           <span>VIDEO</span><strong>OpenGL · Vulkan · Software</strong>
           <span>INPUT</span><strong>Mouse light guns · SDL · Keyboard</strong>
+          <span>HOSTS</span><strong>Windows 10/11 · Five Linux targets</strong>
           <span>LIBRARY</span><strong>Merged · Split · Non-merged</strong>
           <span>SAVES</span><strong>EEPROM · NVRAM · High scores</strong>
         </div>
@@ -83,8 +84,8 @@
         <article class="board-card featured">
           <div class="card-index">22</div>
           <h3>Namco System 22 / Super</h3>
-          <p>Ridge Racer, Ridge Racer 2, Rave Racer, Ace Driver, Victory Lap, Cyber Commando and Time Crisis.</p>
-          <span class="status">7 supported sets</span>
+          <p>Ridge Racer, Ridge Racer 2, Rave Racer, Ace Driver, Victory Lap, Cyber Commando, Time Crisis, Dirt Dash and Aqua Jet.</p>
+          <span class="status">9 supported sets</span>
         </article>
         <article class="board-card">
           <div class="card-index">M1</div>
@@ -101,8 +102,8 @@
         <article class="board-card">
           <div class="card-index">2D</div>
           <h3>Classic boards</h3>
-          <p>Phoenix, Moon Cresta and Sega System 16B Shinobi.</p>
-          <span class="status">3 supported sets</span>
+          <p>Phoenix, Galaxian, Moon Cresta, UniWar S and Sega System 16B Shinobi.</p>
+          <span class="status">5 supported sets</span>
         </article>
       </div>
     </section>
@@ -111,37 +112,38 @@
       <div class="section-heading sticky-heading">
         <p class="eyebrow">Installation</p>
         <h2>From download to launcher</h2>
-        <p>The release is built for current CachyOS and Arch Linux x86-64 systems.</p>
+        <p>Choose the portable Windows ZIP or the native archive matching your Linux distribution.</p>
       </div>
 
       <ol class="steps">
         <li>
           <div class="step-number">01</div>
           <div>
-            <h3>Download the release archive</h3>
-            <p>Open the Preview 2 GitHub release and download the CachyOS x86-64 <code>.tar.gz</code> file plus its checksum.</p>
-            <a class="text-link" href="https://github.com/CrownParkComputing/WhittyArcade-Releases/releases/tag/v0.1.0-preview.2">Open Preview 2 release →</a>
+            <h3>Choose your desktop package</h3>
+            <p>Windows 10/11 uses <code>WhittyArcade-windows-x86_64.zip</code>. Linux builds are provided for Ubuntu 24.04, Debian 13, Fedora 43, openSUSE Tumbleweed and CachyOS/Arch. Download the matching checksum beside the archive.</p>
+            <a class="text-link" href="https://github.com/CrownParkComputing/WhittyArcade-Releases/releases/tag/v0.2.0-preview.2">Open the desktop release →</a>
           </div>
         </li>
         <li>
           <div class="step-number">02</div>
           <div>
-            <h3>Install runtime libraries</h3>
-            <pre><code>sudo pacman -S --needed \
-  libglvnd mesa glu sdl2-compat sdl2_ttf openal glew \
-  vulkan-icd-loader mpg123 zlib minizip freetype2 harfbuzz</code></pre>
-            <p class="fine-print">Use the appropriate OpenGL/Vulkan package for your GPU if it replaces <code>mesa</code>.</p>
+            <h3>Verify the download</h3>
+            <p>On Windows, compare the PowerShell result with the downloaded <code>.sha256</code> file:</p>
+            <pre><code>Get-FileHash .\WhittyArcade-windows-x86_64.zip -Algorithm SHA256</code></pre>
+            <p>On Linux, let <code>sha256sum</code> check it directly:</p>
+            <pre><code>sha256sum -c WhittyArcade-&lt;target&gt;-x86_64.tar.gz.sha256</code></pre>
           </div>
         </li>
         <li>
           <div class="step-number">03</div>
           <div>
-            <h3>Verify, extract and run</h3>
-            <pre><code>sha256sum -c WhittyArcade-cachyos-x86_64.tar.gz.sha256
-tar -xzf WhittyArcade-cachyos-x86_64.tar.gz
-cd WhittyArcade-cachyos-x86_64
+            <h3>Extract the whole archive and run</h3>
+            <p>Windows: extract every file, keep the DLLs beside the executable, then open <code>WhittyArcade.exe</code>. No installer or administrator access is required.</p>
+            <pre><code>tar -xzf WhittyArcade-&lt;target&gt;-x86_64.tar.gz
+cd WhittyArcade-&lt;target&gt;-x86_64
 chmod +x WhittyArcade
 ./WhittyArcade</code></pre>
+            <p class="fine-print">Linux builds are dynamically linked. If a library is missing, install the equivalent SDL2, SDL2_ttf, OpenAL, OpenGL, GLEW, Vulkan loader, zlib, MiniZip, mpg123 and GLM runtime package from your distribution.</p>
           </div>
         </li>
       </ol>
@@ -177,11 +179,11 @@ chmod +x WhittyArcade
           <thead><tr><th>Board</th><th>Supported short names</th><th>Companions</th></tr></thead>
           <tbody>
             <tr><td>Namco System 22</td><td><code>ridgerac</code>, <code>ridgera2</code>, <code>raverace</code>, <code>acedrive</code>, <code>victlap</code>, <code>cybrcomm</code></td><td><code>namcoc71.zip</code> and <code>namcoc74.zip</code></td></tr>
-            <tr><td>Namco Super System 22</td><td><code>timecris</code> (World, TS2 Ver.B)</td><td><code>namcoc71.zip</code>; no C74 archive needed</td></tr>
+            <tr><td>Namco Super System 22</td><td><code>timecris</code>, <code>dirtdash</code>, <code>aquajet</code></td><td><code>namcoc71.zip</code>; no C74 archive needed</td></tr>
             <tr><td>Sega Model 1</td><td><code>vformula</code>, <code>vf</code>, <code>swa</code>, <code>wingwar</code></td><td>Split <code>vformula</code> also needs <code>vr.zip</code></td></tr>
             <tr><td>Sega Model 2</td><td><code>srallyc</code></td><td>None; <code>segabill.zip</code> is optional</td></tr>
             <tr><td>Phoenix</td><td><code>phoenix</code></td><td>None</td></tr>
-            <tr><td>Galaxian</td><td><code>mooncrst</code></td><td>None</td></tr>
+            <tr><td>Galaxian</td><td><code>galaxian</code>, <code>mooncrst</code>, <code>uniwars</code></td><td>None</td></tr>
             <tr><td>Sega System 16B</td><td><code>shinobi4</code></td><td>Split sets also need <code>shinobi6.zip</code></td></tr>
           </tbody>
         </table>
@@ -189,7 +191,7 @@ chmod +x WhittyArcade
 
       <details>
         <summary>Where does WhittyArcade store imported archives?</summary>
-        <p>Normally in <code>~/.local/share/WhittyArcade/roms</code>. Settings, mappings and persistent data live below <code>~/.config/WhittyArcade</code>.</p>
+        <p>On Windows, imported ROMs and user data live below <code>%LOCALAPPDATA%\WhittyArcade</code>. On Linux, ROMs normally use <code>~/.local/share/WhittyArcade/roms</code> and settings use <code>~/.config/WhittyArcade</code>.</p>
       </details>
       <details>
         <summary>Merged, split or non-merged?</summary>
@@ -268,8 +270,8 @@ chmod +x WhittyArcade
       </div>
 
       <details open>
-        <summary>Preview 2 example: Time Crisis</summary>
-        <p>One catalog entry made the game visible to the ROM browser, audit and per-game controller pages. Its newly required Super System 22 memory map, M37710, sprite mixer and light-gun registers remain inside the Namco board implementation. Mouse aim becomes the same neutral gun axes used by configurable controller profiles.</p>
+        <summary>Current example: Super System 22</summary>
+        <p>Time Crisis, Dirt Dash and Aqua Jet share the board implementation while retaining their own ROM profiles and cabinet controls. Catalog entries expose each game consistently to the browser, audit and per-game controller pages. Virtua Cop 2 ROM-loading groundwork is also present, but that game is not yet listed as playable.</p>
       </details>
     </section>
 
@@ -277,7 +279,7 @@ chmod +x WhittyArcade
       <div class="section-heading">
         <p class="eyebrow">Launcher tour</p>
         <h2>Every utility stays inside the arcade shell</h2>
-        <p>These are genuine captures from the current Linux build.</p>
+        <p>These are genuine captures from the current desktop launcher.</p>
       </div>
 
       <div class="gallery">
@@ -316,7 +318,7 @@ chmod +x WhittyArcade
       <div class="faq-list">
         <details open>
           <summary>The executable will not start</summary>
-          <p>Run it from a terminal and install any library reported as missing. The public build targets current CachyOS/Arch x86-64, not older distributions.</p>
+          <p>On Windows, extract the complete ZIP so every bundled DLL remains beside <code>WhittyArcade.exe</code>. On Linux, use the archive matching your distribution and run from a terminal to identify any missing runtime library.</p>
         </details>
         <details>
           <summary>A ROM is not marked ready</summary>
@@ -332,7 +334,7 @@ chmod +x WhittyArcade
         </details>
         <details>
           <summary>Where are settings and saves?</summary>
-          <p>Settings, input maps, EEPROM/NVRAM and high scores are stored below <code>~/.config/WhittyArcade</code>. The NVRAM Manager can back up, export, restore or factory-reset persistent data.</p>
+          <p>Windows stores settings, input maps, EEPROM/NVRAM and high scores below <code>%LOCALAPPDATA%\WhittyArcade</code>; Linux uses <code>~/.config/WhittyArcade</code>. The NVRAM Manager can back up, export, restore or factory-reset persistent data.</p>
         </details>
         <a class="button secondary" href="https://github.com/CrownParkComputing/WhittyArcade-Releases/issues">Open a public support issue</a>
       </div>
@@ -371,7 +373,7 @@ chmod +x WhittyArcade
         .then(items => {
           const count = items
             .flatMap(release => release.assets || [])
-            .filter(asset => /^WhittyArcade-.*\.tar\.gz$/.test(asset.name))
+            .filter(asset => /^WhittyArcade-.*\.(?:tar\.gz|zip)$/.test(asset.name))
             .reduce((total, asset) => total + asset.download_count, 0);
           output.textContent = count.toLocaleString('en-GB');
           output.title = 'Anonymous release-asset count reported by GitHub';
