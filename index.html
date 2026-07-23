@@ -23,6 +23,7 @@
     <nav aria-label="Primary navigation">
       <a href="#install">Install</a>
       <a href="#roms">ROM setup</a>
+      <a href="#compare">Compare</a>
       <a href="#controls">Controls</a>
       <a href="#extension">Adding games</a>
       <a href="#screens">Screens</a>
@@ -39,7 +40,8 @@
         <p class="hero-intro">
           WhittyArcade brings Namco System 22, Sega Model 1, Sega Model 2 and
           selected classic 2D hardware into one purpose-built desktop frontend.
-          Import your own compatible archives, map your controls and go.
+          Drop your compatible archives into its ROM folders, map your controls
+          and go. Nothing is imported, copied, extracted or repacked.
         </p>
         <div class="hero-actions">
           <a class="button primary" href="https://github.com/CrownParkComputing/WhittyArcade-Releases/releases/tag/v0.2.0-preview.2">
@@ -61,7 +63,7 @@
           <span>VIDEO</span><strong>OpenGL · Vulkan · Software</strong>
           <span>INPUT</span><strong>Mouse light guns · SDL · Keyboard</strong>
           <span>HOSTS</span><strong>Windows 10/11 · Five Linux targets</strong>
-          <span>LIBRARY</span><strong>Merged · Split · Non-merged</strong>
+          <span>LIBRARY</span><strong>Direct ROM folders · No import step</strong>
           <span>SAVES</span><strong>EEPROM · NVRAM · High scores</strong>
         </div>
         <a class="text-link" href="https://github.com/CrownParkComputing/WhittyArcade-Releases/releases">View every release →</a>
@@ -96,14 +98,26 @@
         <article class="board-card">
           <div class="card-index">M2</div>
           <h3>Sega Model 2</h3>
-          <p>Sega Rally Championship Revision C, with native machine, video, I/O and audio paths.</p>
-          <span class="status">1 supported set</span>
+          <p>Sega Rally Championship, Virtua Cop and Virtua Cop 2, including driving and mouse light-gun cabinets.</p>
+          <span class="status">3 supported sets</span>
+        </article>
+        <article class="board-card">
+          <div class="card-index">N</div>
+          <h3>Namco specialist boards</h3>
+          <p>Ridge Racer V: Arcade Battle on System 246, Galaga and Pac-Mania on their original hardware paths.</p>
+          <span class="status">3 supported sets</span>
         </article>
         <article class="board-card">
           <div class="card-index">2D</div>
-          <h3>Classic boards</h3>
-          <p>Phoenix, Galaxian, Moon Cresta, UniWar S and Sega System 16B Shinobi.</p>
-          <span class="status">5 supported sets</span>
+          <h3>Classic 2D boards</h3>
+          <p>Phoenix, Galaxian, Moon Cresta, UniWar S, Shinobi and Ghosts'n Goblins.</p>
+          <span class="status">6 supported sets</span>
+        </article>
+        <article class="board-card">
+          <div class="card-index">360</div>
+          <h3>Offline Xbox 360 runtime</h3>
+          <p>Robotron: 2084 through an isolated, locally loaded runtime module.</p>
+          <span class="status">1 supported title</span>
         </article>
       </div>
     </section>
@@ -143,7 +157,7 @@
 cd WhittyArcade-&lt;target&gt;-x86_64
 chmod +x WhittyArcade
 ./WhittyArcade</code></pre>
-            <p class="fine-print">Linux builds are dynamically linked. If a library is missing, install the equivalent SDL2, SDL2_ttf, OpenAL, OpenGL, GLEW, Vulkan loader, zlib, MiniZip, mpg123 and GLM runtime package from your distribution.</p>
+            <p class="fine-print">Linux builds are dynamically linked. If a library is missing, install the equivalent SDL3, SDL3_ttf, OpenAL, OpenGL, GLEW, Vulkan loader, zlib, MiniZip, mpg123 and GLM runtime package from your distribution.</p>
           </div>
         </li>
       </ol>
@@ -152,25 +166,25 @@ chmod +x WhittyArcade
     <section class="section" id="roms">
       <div class="section-heading">
         <p class="eyebrow">ROM library</p>
-        <h2>Keep your archives intact</h2>
-        <p>The importer copies compatible MAME ZIP archives unchanged. It does not extract, modify or repack them.</p>
+        <h2>Use folders. Skip the import step.</h2>
+        <p>WhittyArcade reads compatible MAME ZIPs, extracted sets and disc images in place. It never copies, extracts, modifies or repacks them.</p>
       </div>
 
       <div class="instruction-grid">
         <article>
           <span class="instruction-icon" aria-hidden="true">1</span>
-          <h3>Open ROM Library / Import</h3>
-          <p>Launch WhittyArcade with no arguments, then choose <strong>ROM Library / Import</strong>.</p>
+          <h3>Open ROM Folders</h3>
+          <p>Launch WhittyArcade with no arguments, then choose <strong>ROM Folders</strong> to see the exact ROM and CHD locations.</p>
         </article>
         <article>
           <span class="instruction-icon" aria-hidden="true">2</span>
-          <h3>Select ZIPs or scan a folder</h3>
-          <p>Import one or more archives, or point the scanner at an existing MAME ROM directory.</p>
+          <h3>Drop files into place</h3>
+          <p>Put supported ZIPs or extracted sets in the ROM folder. Put disc media such as <code>rrv1-a.chd</code> in the CHD folder.</p>
         </article>
         <article>
           <span class="instruction-icon" aria-hidden="true">3</span>
           <h3>Run the audit</h3>
-          <p>Choose <strong>Audit installed ROMs</strong>. A set marked ready has passed the loader's size and CRC checks.</p>
+          <p>Choose <strong>Audit ROMs</strong>. A set marked ready has passed its board loader's size and CRC checks.</p>
         </article>
       </div>
 
@@ -180,23 +194,52 @@ chmod +x WhittyArcade
           <tbody>
             <tr><td>Namco System 22</td><td><code>ridgerac</code>, <code>ridgera2</code>, <code>raverace</code>, <code>acedrive</code>, <code>victlap</code>, <code>cybrcomm</code></td><td><code>namcoc71.zip</code> and <code>namcoc74.zip</code></td></tr>
             <tr><td>Namco Super System 22</td><td><code>timecris</code>, <code>dirtdash</code>, <code>aquajet</code></td><td><code>namcoc71.zip</code>; no C74 archive needed</td></tr>
+            <tr><td>Namco System 246</td><td><code>rrvac</code></td><td><code>rrv1-a.chd</code> in the CHD folder</td></tr>
+            <tr><td>Xbox 360 offline</td><td><code>robotron</code></td><td>Extracted <code>default.xex</code> with <code>classic/</code> and <code>media/</code></td></tr>
             <tr><td>Sega Model 1</td><td><code>vformula</code>, <code>vf</code>, <code>swa</code>, <code>wingwar</code></td><td>Split <code>vformula</code> also needs <code>vr.zip</code></td></tr>
-            <tr><td>Sega Model 2</td><td><code>srallyc</code></td><td>None; <code>segabill.zip</code> is optional</td></tr>
+            <tr><td>Sega Model 2</td><td><code>srallyc</code>, <code>vcop</code>, <code>vcop2</code></td><td>None; <code>segabill.zip</code> is optional for <code>srallyc</code></td></tr>
             <tr><td>Phoenix</td><td><code>phoenix</code></td><td>None</td></tr>
             <tr><td>Galaxian</td><td><code>galaxian</code>, <code>mooncrst</code>, <code>uniwars</code></td><td>None</td></tr>
             <tr><td>Sega System 16B</td><td><code>shinobi4</code></td><td>Split sets also need <code>shinobi6.zip</code></td></tr>
+            <tr><td>Capcom Ghosts'n Goblins</td><td><code>gng</code></td><td>None</td></tr>
+            <tr><td>Namco Galaga</td><td><code>galaga</code></td><td>None</td></tr>
+            <tr><td>Namco System 1</td><td><code>pacmania</code></td><td>None</td></tr>
           </tbody>
         </table>
       </div>
 
       <details>
-        <summary>Where does WhittyArcade store imported archives?</summary>
-        <p>On Windows, imported ROMs and user data live below <code>%LOCALAPPDATA%\WhittyArcade</code>. On Linux, ROMs normally use <code>~/.local/share/WhittyArcade/roms</code> and settings use <code>~/.config/WhittyArcade</code>.</p>
+        <summary>Which folders does WhittyArcade read?</summary>
+        <p>Windows uses <code>%LOCALAPPDATA%\WhittyArcade\roms</code> and <code>%LOCALAPPDATA%\WhittyArcade\chd</code>. Linux normally uses <code>~/.local/share/WhittyArcade/roms</code> and <code>~/.local/share/WhittyArcade/chd</code>. Files stay exactly where you place them.</p>
       </details>
       <details>
         <summary>Merged, split or non-merged?</summary>
-        <p>All three layouts are supported. A non-merged game ZIP is self-contained. Split sets need their parent or companion archive beside them. For a merged set, import the parent ZIP; clone entries are found by basename.</p>
+        <p>All three layouts are supported. A non-merged game ZIP is self-contained. Split sets need their parent or companion archive beside them. For a merged set, place the parent ZIP in the ROM folder; clone entries are found by basename.</p>
       </details>
+    </section>
+
+    <section class="section" id="compare">
+      <div class="section-heading">
+        <p class="eyebrow">WhittyArcade and FBNeo</p>
+        <h2>Different scope, different strengths</h2>
+        <p>WhittyArcade is not an FBNeo fork or replacement. It is a focused standalone cabinet emulator; FBNeo is a mature, broad multi-system project with standalone and Libretro frontends.</p>
+      </div>
+
+      <div class="table-wrap" tabindex="0" aria-label="WhittyArcade and FinalBurn Neo comparison">
+        <table class="comparison-table">
+          <thead><tr><th>Area</th><th>WhittyArcade</th><th>FinalBurn Neo</th></tr></thead>
+          <tbody>
+            <tr><td>Primary focus</td><td>Selected arcade boards and exact cabinet profiles, especially Namco and Sega 3D hardware.</td><td>Wide arcade, console and computer coverage in one actively developed emulator.</td></tr>
+            <tr><td>Frontend</td><td>Purpose-built standalone Windows/Linux launcher, pause menu, settings and cabinet tools.</td><td>Standalone ports plus a widely used Libretro core for RetroArch.</td></tr>
+            <tr><td>ROM workflow</td><td>Reads supported current-MAME ZIPs, extracted sets and CHDs directly from dedicated folders. No import, copy or repack step.</td><td>Requires ROM sets matching the installed FBNeo version; official guidance provides DAT files and recommends rebuilding sets when required.</td></tr>
+            <tr><td>Catalog</td><td>26 working sets across 11 board/runtime groups; each set has an explicit loader and cabinet integration.</td><td>A much broader catalog across many arcade families and several consoles/computers.</td></tr>
+            <tr><td>Cabinet features</td><td>Per-game driving, twin-stick and light-gun paths; live DIP/operator menus; EEPROM/NVRAM manager; verified high-score viewers.</td><td>Broad controller and DIP support, native cheats and optional <code>hiscore.dat</code> integration.</td></tr>
+            <tr><td>Frontend ecosystem</td><td>Focused desktop feature set; no netplay, rewind, run-ahead or achievements at present.</td><td>The Libretro core supports saves, rewind, run-ahead, pre-emptive frames, netplay, achievements and cheats through RetroArch.</td></tr>
+            <tr><td>Best fit</td><td>You want the supported WhittyArcade cabinets in a self-contained arcade-style desktop application.</td><td>You want maximum breadth, low-end/portable targets, or RetroArch's wider feature ecosystem.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="fine-print">FBNeo details are based on the <a class="text-link" href="https://github.com/finalburnneo/FBNeo">official FBNeo repository</a> and the <a class="text-link" href="https://docs.libretro.com/library/fbneo/">official Libretro FBNeo documentation</a>. Features can differ between standalone FBNeo and its Libretro core.</p>
     </section>
 
     <section class="section controls-section" id="controls">
@@ -227,7 +270,7 @@ chmod +x WhittyArcade
             <div><dt>5 / 1</dt><dd>Coin 1 / Start 1</dd></div>
             <div><dt>WASD · Z/X/C</dt><dd>Player 1 directions / actions</dd></div>
             <div><dt>F2</dt><dd>Cabinet test switch</dd></div>
-            <div><dt>S / C</dt><dd>Settings / controls in gameplay</dd></div>
+            <div><dt>P</dt><dd>Pause and open the shared in-game menu</dd></div>
             <div><dt>Esc</dt><dd>Return to launcher</dd></div>
           </dl>
         </article>
@@ -248,7 +291,7 @@ chmod +x WhittyArcade
       <div class="section-heading">
         <p class="eyebrow">Extensible cabinets</p>
         <h2>One game profile feeds the whole launcher</h2>
-        <p>WhittyArcade keeps game metadata, board behaviour and host controls separate, so a supported set appears consistently everywhere.</p>
+        <p>WhittyArcade keeps game metadata, board behaviour and host controls separate, so a supported set appears consistently in the ROM folders, audit, launcher and pause menu.</p>
       </div>
 
       <div class="instruction-grid">
@@ -271,7 +314,7 @@ chmod +x WhittyArcade
 
       <details open>
         <summary>Current example: Super System 22</summary>
-        <p>Time Crisis, Dirt Dash and Aqua Jet share the board implementation while retaining their own ROM profiles and cabinet controls. Catalog entries expose each game consistently to the browser, audit and per-game controller pages. Virtua Cop 2 ROM-loading groundwork is also present, but that game is not yet listed as playable.</p>
+        <p>Time Crisis, Dirt Dash and Aqua Jet share the board implementation while retaining their own ROM profiles and cabinet controls. Catalog entries expose each game consistently to the browser, audit and per-game controller pages. Virtua Cop and Virtua Cop 2 likewise retain their distinct Model 2 sound, I/O and light-gun paths.</p>
       </details>
     </section>
 
@@ -296,8 +339,8 @@ chmod +x WhittyArcade
           <figcaption><strong>Game readiness</strong><span>Validated sets are marked ready.</span></figcaption>
         </figure>
         <figure>
-          <a href="assets/screenshots/rom-library.png"><img src="assets/screenshots/rom-library.png" alt="ROM Library and Import menu" loading="lazy"></a>
-          <figcaption><strong>ROM library</strong><span>Import, audit and inspect layouts.</span></figcaption>
+          <a href="assets/screenshots/rom-library.png"><img src="assets/screenshots/rom-library.png" alt="ROM Folders menu" loading="lazy"></a>
+          <figcaption><strong>ROM folders</strong><span>Read in place, audit and inspect layouts.</span></figcaption>
         </figure>
         <figure>
           <a href="assets/screenshots/controllers.png"><img src="assets/screenshots/controllers.png" alt="Controller and keyboard profiles grouped by board" loading="lazy"></a>
@@ -322,7 +365,7 @@ chmod +x WhittyArcade
         </details>
         <details>
           <summary>A ROM is not marked ready</summary>
-          <p>Run <strong>Audit installed ROMs</strong>. Confirm the exact supported short name and keep required parent, companion and firmware ZIPs beside the game archive.</p>
+          <p>Run <strong>Audit ROMs</strong>. Confirm the exact supported short name and keep required parent, companion and firmware ZIPs beside the game archive.</p>
         </details>
         <details>
           <summary>My controller is not listed</summary>

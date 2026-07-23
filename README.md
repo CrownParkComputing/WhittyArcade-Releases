@@ -34,17 +34,26 @@ The Windows ZIP is portable and includes its required runtime DLLs. Linux
 archives are dynamically linked and should be matched to the named
 distribution. The separate `.sha256` asset verifies each complete download.
 
-## Current desktop preview
+## Current development catalog
 
-Preview 2 runs on Windows 10/11 and five current Linux targets. It adds Dirt
-Dash and Aqua Jet to the supported Super System 22 catalog, retains Time
-Crisis mouse light-gun and pedal controls, and expands the classic catalog to
-Galaxian and UniWar S. Virtua Cop 2 ROM-loading groundwork is included, but
-that game is not yet listed as playable.
+WhittyArcade currently recognises 26 working sets across 11 board/runtime
+groups. The focused catalog includes Namco System 22 / Super System 22,
+System 246, Sega Model 1 and Model 2, Namco System 1, Galaga, Galaxian,
+Phoenix, Sega System 16B, Ghosts'n Goblins hardware and an isolated offline
+Xbox 360 runtime. Ridge Racer Full Scale is recognised separately and remains
+marked not working.
 
-The release recognises 19 working sets across Namco System 22 / Super System
-22, Sega Model 1, Sega Model 2, Phoenix, Galaxian and Sega System 16B. Ridge
-Racer Full Scale is recognised separately and remains marked not working.
+The launcher reads compatible MAME ZIPs and extracted sets directly from its
+ROM folder, and disc images from its CHD folder. There is no ROM import,
+copy, extraction or repacking step. See the
+[public guide](https://crownparkcomputing.github.io/WhittyArcade-Releases/#roms)
+for paths, supported short names and the ROM audit.
+
+The public guide also includes a factual
+[comparison with FinalBurn Neo](https://crownparkcomputing.github.io/WhittyArcade-Releases/#compare).
+The projects have different goals: WhittyArcade focuses on a small set of
+cabinet-specific integrations, while FBNeo provides much broader multi-system
+coverage and a large Libretro/RetroArch feature ecosystem.
 
 ## ROM policy
 
